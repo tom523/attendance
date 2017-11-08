@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>时间段</th>
+        <th>星期一</th>
+        <th>星期二</th>
+        <th>星期三</th>
+        <th>星期四</th>
+        <th>星期五</th>
+        <th>星期六</th>
+        <th>星期日</th>
+    </tr>
+    <tr>
+        <td>上午12节</td>
+        {% for day_queryset in day12_list %}
+        <td>
+            <ol>
+                {% for item in day_queryset %}
+                <li>{{ item.student.name }}</li>
+                {% endfor %}
+            </ol>
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td>上午34节</td>
+        {% for day_queryset in day34_list %}
+        <td>
+            <ol>
+                {% for item in day_queryset %}
+                <li>{{ item.student.name }}</li>
+                {% endfor %}
+            </ol>
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td>中午</td>
+        {% for day_queryset in day_noon_list %}
+        <td>
+            <ol>
+                {% for item in day_queryset %}
+                <li>{{ item.student.name }}</li>
+                {% endfor %}
+            </ol>
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td>下午56节</td>
+        {% for day_queryset in day56_list %}
+        <td>
+            <ol>
+                {% for item in day_queryset %}
+                <li>{{ item.student.name }}</li>
+                {% endfor %}
+            </ol>
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td>下午78节</td>
+        {% for day_queryset in day78_list %}
+        <td>
+            <ol>
+                {% for item in day_queryset %}
+                <li>{{ item.student.name }}</li>
+                {% endfor %}
+            </ol>
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td>晚上7点到9点</td>
+        {% for day_queryset in day_night7to9_list %}
+        <td>
+            <ol>
+                {% for item in day_queryset %}
+                <li>{{ item.student.name }}</li>
+                {% endfor %}
+            </ol>
+        </td>
+        {% endfor %}
+    </tr>
+</table>
+<table border='1'>
+    <tr>
+        <td>序号</td>
+        <td>姓名</td>
+        <td>出勤时长</td>
+    </tr>
+    {% for key,value in sorted_attend_duration %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ key }}</td>
+        <td>{{ value }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
